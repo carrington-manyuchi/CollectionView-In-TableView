@@ -9,11 +9,11 @@ import UIKit
 
 
 var data = [
-    MovieData(sectionType:"Hollywood Movies", Movies: ["1" , "2", "3" , "4", "5","11" , "12", "13"]),
-    MovieData(sectionType: "ShowMax Series", Movies:["6" , "7", "8" , "9", "10", "2", "3" ]),
-    MovieData(sectionType: "Netflix Movies", Movies:["15" , "14", "13" , "12", "11"]),
-    MovieData(sectionType: "Primeo Series", Movies: ["9" , "8", "7" , "6", "5"]),
-    MovieData(sectionType: "Mzansi Movies", Movies:["6" , "8", "13" , "4", "9","15" , "14"])
+    MovieData(sectionType:"Hollywood Movies", Movies: ["1","2","3" ,"4","5","11","12", "13","7","6",]),
+    MovieData(sectionType: "ShowMax Series", Movies:  ["8","7","8","9","10","2","3","13" ,"14","15", ]),
+    MovieData(sectionType: "Netflix Movies", Movies:  ["15","14","13","12","11","2","3","4","5","8"]),
+    MovieData(sectionType: "Primeo Series", Movies:   ["9","8","6","5","15","14","13","11","2", "6"]),
+    MovieData(sectionType: "Mzansi Movies", Movies:   ["11","8","6","8","13","4","9","15","14","6"])
 
 ]
 
