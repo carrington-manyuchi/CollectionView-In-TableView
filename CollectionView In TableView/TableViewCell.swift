@@ -14,6 +14,9 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,4 +25,24 @@ class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+
+
+
+
+extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data[collectionView.tag].Movies.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        
+        cell.images.image = UIImage(named: data[collectionView.tag].Movies[indexPath.row])
+        
+        return cell
+    }
 }

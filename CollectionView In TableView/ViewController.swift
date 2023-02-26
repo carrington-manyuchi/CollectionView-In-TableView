@@ -9,11 +9,11 @@ import UIKit
 
 
 var data = [
-    MovieData(sectionType:"Hollywood Movies", Movies: ["Movie1" , "Movie2", "Movie3" , "Movie4", "Movie5"]),
-    MovieData(sectionType: "ShowMax Series", Movies:["Movie1" , "Movie2", "Movie3" , "Movie4", "Movie5"]),
-    MovieData(sectionType: "Netflix Movies", Movies:["Movie1" , "Movie2", "Movie3" , "Movie4", "Movie5"]),
-    MovieData(sectionType: "Primeo Series", Movies: ["Movie1" , "Movie2", "Movie3" , "Movie4", "Movie5"]),
-    MovieData(sectionType: "Mzansi Movies", Movies:["Movie1" , "Movie2", "Movie3" , "Movie4", "Movie5"]),
+    MovieData(sectionType:"Hollywood Movies", Movies: ["1" , "2", "3" , "4", "5","11" , "12", "13"]),
+    MovieData(sectionType: "ShowMax Series", Movies:["6" , "7", "8" , "9", "10", "2", "3" ]),
+    MovieData(sectionType: "Netflix Movies", Movies:["15" , "14", "13" , "12", "11"]),
+    MovieData(sectionType: "Primeo Series", Movies: ["9" , "8", "7" , "6", "5"]),
+    MovieData(sectionType: "Mzansi Movies", Movies:["6" , "8", "13" , "4", "9","15" , "14"])
 
 ]
 
@@ -40,22 +40,30 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        <#code#>
+        return 50
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        <#code#>
+        view.tintColor = .cyan
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        <#code#>
+        return data[section].sectionType
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        
+        cell.collectionView.tag = indexPath.section
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
 }
